@@ -11,6 +11,7 @@ export class AppComponent {
   topics =['Angulae', 'react' , 'Vue'];
   userModel = new User('Rob' , 'rob@gmail.com', 7008576901, '', 'morning', true );
   wasim ="I am from West Bengal";
+  laptop ="i have a dell laptop"
 
   findChiranjib(){
     return 'im from odisha';
