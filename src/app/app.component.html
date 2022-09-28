@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced.
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -17,4 +17,65 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
+<div class="container-fluid">
+  <h1>Bootcamp Enrollment Form</h1>
+  
+  <form #userForm="ngForm">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" 
+      placeholder="Your name" name="username" [(ngModel)]="userModel.name">
+      <small>Name is required</small>
+    </div>
+    {{name.className}}
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" placeholder="example@mail.com" name="email" [(ngModel)]="userModel.email">
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" class="form-control" placeholder="Your phone number" name="phonenumber" [(ngModel)]="userModel.phone">
+    </div>
+    <div class="form-group">del
+      <select class="custom-select" name="topic" [(ngModel)]="userModel.topic">
+        <option selected value="">I am Interested in</option>
+        <option *ngFor="let topic of topics">{{ topic }}</option>
+       </select>
+        </div>
+         <div class="mb-3">
+           <label>Time preference</label>
+             <div class="form-check">
+             <input type="radio" class="form-check-label" [(ngModel)]="userModel.timePreference" name="timePreference" value="morning">
+             <label class="form-check-label">Morning (9AM - 12PM)</label>
+              </div>
+              <div class="form-check">
+               <input type="radio" class="form-check-label" [(ngModel)]="userModel.timePreference" name="timePreference" value="morning">
+                 <label class="form-check-label">Evening (5PM - 8PM)</label>
+                  </div>
+                       </div>
 
+         <div class="form-check mb-3">  
+          <input type="checkbox" name="subscribe" [(ngModel)]="userModel.subscribe" class="form-check-input">
+          <label class="form-check-label"> 
+      Send me promotional offers
+     </label>
+    </div>
+    <button class="btn btn-primary" type="submit" >Submit form</button>
+  </form>
+</div>
+ -->
+
+
+ <h1>{{title}}</h1>
+ <h3>{{getUsername()}}</h3>
+ <h3>{{address.city}}</h3>
+ <h4>{{topics}}</h4>
+ <app-about></app-about>
+ <app-login></app-login>
+<app-register></app-register>
+<button (click)="getName()">Click Me</button>
+
+<input type="text" (keyup)="myText($event.target.value)">
+<br><br>
+<h3>{{ourText}}</h3>
+<p [innerHTML]="myNameS"></p>
