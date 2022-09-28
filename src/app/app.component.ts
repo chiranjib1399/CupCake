@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'app'; 
   topics =['Angulae', 'react' , 'Vue'];
   userModel = new User('Rob' , 'rob@gmail.com', 7008576901, '', 'morning', true );
+  wasim ="I am from West Bengal";
 
   getUsername(){
     var name= "Gopal" ;
